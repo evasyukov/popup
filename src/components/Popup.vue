@@ -21,7 +21,7 @@
       </form>
     </div>
   </div>
-   <!-- Отображение введенных данных после отправки формы -->
+  <!-- Отображение введенных данных после отправки формы -->
   <div v-if="submittedData" class="submitted-data">
     <h3>Введенные данные:</h3>
     <ul>
@@ -53,11 +53,12 @@ export default {
     },
     closePopup() {
       this.isVisible = false // Закрытие модального окна
+      this.submittedData = null // Clear submitted data
     },
     submitForm() {
       this.submittedData = JSON.parse(JSON.stringify(this.inputs)) // Сохраняем данные
       this.inputs = this.inputs.map((input) => ({ ...input, value: "" })) // Очищаем поля
-      this.closePopup()
+      this.isVisible = false
     },
   },
 }
@@ -78,22 +79,23 @@ export default {
 
 .popup {
   background-color: white;
-  max-width: 500px;
+  width: 400px;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.878);
 }
 
 .input-group {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 10px;
 }
 
 .form {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
 }
 
 @media (max-width: 600px) {
