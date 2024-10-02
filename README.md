@@ -23,10 +23,10 @@
 ## Установка
 
 1. Клонируйте репозиторий:
-`git clone https://github.com/yourusername/vue-project.git`
+`git clone https://github.com/evasyukov/popup.git`
 
 2. Перейдите в директорию проекта:
-`cd vue-project`
+`cd popup`
 
 3. Установите зависимости:
 `npm install`
